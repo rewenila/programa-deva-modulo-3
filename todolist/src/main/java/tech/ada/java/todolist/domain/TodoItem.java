@@ -6,12 +6,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
+//@NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
 public class TodoItem {
@@ -22,6 +23,11 @@ public class TodoItem {
     private String title;
     private String description;
     private Boolean completed;
-    private LocalDateTime dateHour;
+    private LocalDateTime dateHourCreation;
+    private LocalDate deadline;
+
+    public TodoItem() {
+        dateHourCreation = LocalDateTime.now();
+    }
 
 }
