@@ -12,8 +12,6 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-//@NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode
 public class TodoItem {
 
@@ -22,12 +20,31 @@ public class TodoItem {
     private Long id;
     private String title;
     private String description;
-    private Boolean completed;
-    private LocalDateTime dateHourCreation;
     private LocalDate deadline;
+    private Boolean completed;
+    private LocalDateTime createdAt;
 
     public TodoItem() {
-        dateHourCreation = LocalDateTime.now();
+        this.completed = false;
+        this.createdAt = LocalDateTime.now();
     }
+
+    public TodoItem(String title, String description, LocalDate deadline) {
+        this.title = title;
+        this.description = description;
+        this.deadline = deadline;
+        this.completed = false;
+        this.createdAt = LocalDateTime.now();
+    }
+
+    // Related to factory pattern
+    /* public static TodoItem createTodoItem(String title, String description, LocalDate deadline, boolean completed, LocalDateTime createdAt) {
+        return new TodoItem(
+                title,
+                description,
+                deadline,
+                false,
+                LocalDateTime.now());
+    }*/
 
 }
