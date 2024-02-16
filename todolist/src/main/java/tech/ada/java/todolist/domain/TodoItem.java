@@ -23,10 +23,12 @@ public class TodoItem {
     private LocalDate deadline;
     private Boolean completed;
     private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
     public TodoItem() {
         this.completed = false;
         this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     public TodoItem(String title, String description, LocalDate deadline) {
@@ -35,6 +37,7 @@ public class TodoItem {
         this.deadline = deadline;
         this.completed = false;
         this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     // Related to factory pattern

@@ -1,12 +1,13 @@
 package tech.ada.java.todolist.domain;
 
-import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cglib.core.Local;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -64,4 +65,41 @@ public class TodoController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @PutMapping("/todo-item/{id}")
+    public ResponseEntity<TodoItem> updateEntireTodoItem(
+            @PathVariable Long id,
+            @RequestBody UpdateEntireTodoItemRequest request) throws Exception {
+        Optional<TodoItem> optionalTodoItem = todoItemRepository.findById(id);
+
+        if (optionalTodoItem.isPresent()) {
+            TodoItem todoItemModified = optionalTodoItem.get();
+
+            todoItemModified.setTitle(request.title());
+            todoItemModified.setDescription(request.description());
+            todoItemModified.setCompleted(request.completed()    );
+            todoItemModified.setDeadline(request.deadline());
+            // Both ways below are correct, as well as not updating at all: it depends on business rules
+            // todoItemModified.setCreatedAt(request.createdAt());
+            // todoItemModified.setCreatedAt(LocalDateTime.now());
+            todoItemModified.setUpdatedAt(LocalDateTime.now());
+
+            TodoItem todoItemSaved = todoItemRepository.save(todoItemModified);
+            return ResponseEntity.ok(todoItemSaved);
+        } else {
+            // If id is autoincremented, PUT should only update and not also create, because the created
+            // item will have the autoincremented id and not the path variable id
+            /* TodoItem todoItemNew = new TodoItem();
+
+            todoItemNew.setTitle(request.title());
+            todoItemNew.setDescription(request.description());
+            todoItemNew.setCompleted(request.completed());
+            todoItemNew.setDeadline(request.deadline());
+            todoItemNew.setCreatedAt(request.createdAt());
+
+            TodoItem todoItemSaved = todoItemRepository.save(todoItemNew); */
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }
