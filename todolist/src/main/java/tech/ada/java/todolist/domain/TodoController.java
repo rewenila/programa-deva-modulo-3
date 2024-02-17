@@ -48,6 +48,13 @@ public class TodoController {
         return listWithAll;
     }
 
+    @GetMapping(value = "/todo-item", params = {"title"})
+    public List<TodoItem> findByFilter(@RequestParam String title) {
+        String titleWithoutSpaces = title.replaceAll("\\s","");
+        //return todoItemRepository.findByTitleIgnoreCase(titleWithoutSpaces);
+        return todoItemRepository.findByTitleQuery(titleWithoutSpaces);
+    }
+
     @PatchMapping("/todo-item/{id}")
     public ResponseEntity<TodoItem> updateStatus(
             @PathVariable Long id,
