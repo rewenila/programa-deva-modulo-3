@@ -1,4 +1,4 @@
-package tech.ada.java.todolist.domain;
+package tech.ada.java.todolist.domain.config;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,9 +1,8 @@
-package tech.ada.java.todolist.domain;
+package tech.ada.java.todolist.domain.todoitem;
 
 import lombok.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor

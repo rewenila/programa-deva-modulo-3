@@ -1,10 +1,9 @@
-package tech.ada.java.todolist.domain;
+package tech.ada.java.todolist.domain.todoitem;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 import lombok.*;
+import tech.ada.java.todolist.domain.todolist.TodoList;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -24,6 +23,9 @@ public class TodoItem {
     private Boolean completed;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    /*@ManyToOne
+    @JsonIgnoreProperties(value = "todoItems")
+    private TodoList todoList;*/
 
     public TodoItem() {
         this.completed = false;
