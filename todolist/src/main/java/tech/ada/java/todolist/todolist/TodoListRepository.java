@@ -1,4 +1,4 @@
-package tech.ada.java.todolist.domain.todolist;
+package tech.ada.java.todolist.todolist;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

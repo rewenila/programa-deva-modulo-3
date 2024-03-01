@@ -1,4 +1,4 @@
-package tech.ada.java.todolist.domain.todoitem;
+package tech.ada.java.todolist.todoitem;
 
 import lombok.Getter;
 

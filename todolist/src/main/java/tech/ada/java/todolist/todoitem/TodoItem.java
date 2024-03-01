@@ -1,9 +1,7 @@
-package tech.ada.java.todolist.domain.todoitem;
+package tech.ada.java.todolist.todoitem;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
-import tech.ada.java.todolist.domain.todolist.TodoList;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

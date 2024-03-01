@@ -1,4 +1,4 @@
-package tech.ada.java.todolist.domain.config;
+package tech.ada.java.todolist.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

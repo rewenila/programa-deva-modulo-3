@@ -1,4 +1,4 @@
-package tech.ada.java.todolist.domain.todoitem;
+package tech.ada.java.todolist.todoitem;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import tech.ada.java.todolist.domain.todolist.TodoList;
-import tech.ada.java.todolist.domain.todolist.TodoListRepository;
+import tech.ada.java.todolist.todolist.TodoList;
+import tech.ada.java.todolist.todolist.TodoListRepository;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

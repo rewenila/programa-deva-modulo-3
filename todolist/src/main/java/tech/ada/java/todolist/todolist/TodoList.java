@@ -1,10 +1,10 @@
-package tech.ada.java.todolist.domain.todolist;
+package tech.ada.java.todolist.todolist;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import tech.ada.java.todolist.domain.todoitem.TodoItem;
+import tech.ada.java.todolist.todoitem.TodoItem;
 
 import java.util.List;
 

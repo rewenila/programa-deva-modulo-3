@@ -1,4 +1,4 @@
-package tech.ada.java.todolist.domain.example;
+package tech.ada.java.todolist.example;
 
 import jakarta.persistence.*;
 import lombok.Getter;

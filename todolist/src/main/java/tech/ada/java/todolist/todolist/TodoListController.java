@@ -1,4 +1,4 @@
-package tech.ada.java.todolist.domain.todolist;
+package tech.ada.java.todolist.todolist;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import tech.ada.java.todolist.client.Result;
 import tech.ada.java.todolist.client.TodoExternal;
 import tech.ada.java.todolist.client.TodoRestClient;
-import tech.ada.java.todolist.domain.todoitem.TodoItem;
-import tech.ada.java.todolist.domain.todoitem.TodoItemRepository;
+import tech.ada.java.todolist.todoitem.TodoItem;
+import tech.ada.java.todolist.todoitem.TodoItemRepository;
 
 import java.util.ArrayList;
 import java.util.List;
